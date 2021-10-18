@@ -1,0 +1,146 @@
+{
+  "version": 2,
+  "projects": {
+    "mel-services-logistiques": {
+      "root": "apps/mel-services-logistiques",
+      "sourceRoot": "apps/mel-services-logistiques/src",
+      "projectType": "application",
+      "targets": {
+        "start": {
+          "executor": "@nrwl/react-native:start",
+          "options": {
+            "port": 8081
+          }
+        },
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "nx start mel-services-logistiques"
+          }
+        },
+        "run-ios": {
+          "executor": "@nrwl/react-native:run-ios",
+          "options": {}
+        },
+        "bundle-ios": {
+          "executor": "@nrwl/react-native:bundle",
+          "outputs": ["apps/mel-services-logistiques/build"],
+          "options": {
+            "entryFile": "apps/mel-services-logistiques/src/main.tsx",
+            "platform": "ios",
+            "bundleOutput": "dist/apps/mel-services-logistiques/ios/main.jsbundle"
+          }
+        },
+        "run-android": {
+          "executor": "@nrwl/react-native:run-android",
+          "options": {}
+        },
+        "build-android": {
+          "executor": "@nrwl/react-native:build-android",
+          "outputs": [
+            "apps/mel-services-logistiques/android/app/build/outputs/bundle",
+            "apps/mel-services-logistiques/android/app/build/outputs/apk"
+          ],
+          "options": {}
+        },
+        "bundle-android": {
+          "executor": "@nrwl/react-native:bundle",
+          "options": {
+            "entryFile": "apps/mel-services-logistiques/src/main.tsx",
+            "platform": "android",
+            "bundleOutput": "dist/apps/mel-services-logistiques/android/main.jsbundle"
+          }
+        },
+        "sync-deps": {
+          "executor": "@nrwl/react-native:sync-deps",
+          "options": {}
+        },
+        "ensure-symlink": {
+          "executor": "@nrwl/react-native:ensure-symlink",
+          "options": {}
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "apps/mel-services-logistiques/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/apps/mel-services-logistiques"],
+          "options": {
+            "jestConfig": "apps/mel-services-logistiques/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "mel-services-logistiques-e2e": {
+      "root": "apps/mel-services-logistiques-e2e",
+      "sourceRoot": "apps/mel-services-logistiques-e2e/src",
+      "projectType": "application",
+      "targets": {
+        "build-ios": {
+          "executor": "@nrwl/detox:build",
+          "options": {
+            "detoxConfiguration": "ios.sim.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "ios.sim.release"
+            }
+          }
+        },
+        "test-ios": {
+          "executor": "@nrwl/detox:test",
+          "options": {
+            "detoxConfiguration": "ios.sim.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "ios.sim.release"
+            }
+          }
+        },
+        "build-android": {
+          "executor": "@nrwl/detox:build",
+          "options": {
+            "detoxConfiguration": "android.emu.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "android.emu.release"
+            }
+          }
+        },
+        "test-android": {
+          "executor": "@nrwl/detox:test",
+          "options": {
+            "detoxConfiguration": "android.emu.debug"
+          },
+          "configurations": {
+            "production": {
+              "detoxConfiguration": "android.emu.release"
+            }
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": [
+              "apps/mel-services-logistiques-e2e/**/*.{ts,tsx,js,jsx}"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react-native"
+  },
+  "defaultProject": "mel-services-logistiques"
+}
