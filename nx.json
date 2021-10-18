@@ -12,9 +12,15 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "ZGU4Njg0ZGQtODA2NC00ZmM3LTllOTItOTU2ODM1YTc5OGMxfHJlYWQtd3JpdGU="
       }
     }
   },
@@ -32,7 +38,9 @@
     },
     "mel-services-logistiques-e2e": {
       "tags": [],
-      "implicitDependencies": ["mel-services-logistiques"]
+      "implicitDependencies": [
+        "mel-services-logistiques"
+      ]
     }
   }
 }
