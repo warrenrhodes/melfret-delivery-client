@@ -1,6 +1,8 @@
 
 
-# MelServicesLogistiques
+# Mel Services Logistiques
+[![main workflow](https://github.com/pozzity/melfret-delivery-client/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/pozzity/melfret-delivery-client/actions?query=branch%3Amain)
+
 
 This project was generated using [Nx](https://nx.dev).
 
