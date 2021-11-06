@@ -18,7 +18,7 @@ const nextConfig = {
                 ...(config.resolve.alias || {}),
                 'react-native$': path.join(__dirname, '../../', 'node_modules', 'react-native-web'),
             },
-            symlinks: true
+            symlinks: false
         };
 
         return config

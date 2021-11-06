@@ -16,6 +16,20 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  code-quality:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - run: npm install
+      - name: run lint
+        run: npx nx affected --target=lint --parallel --max-parallel=2 --maxWarnings=0
   test-build:
     runs-on: ubuntu-latest
     steps:

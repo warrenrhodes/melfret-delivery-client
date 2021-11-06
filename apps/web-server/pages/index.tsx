@@ -83,8 +83,9 @@ nx g @nrwl/react:component xyz --project ui`}</pre>
       </details>
       <details>
         <summary>View dependency graph</summary>
-        <pre>{`nx dep-graph`}</pre>
+        <pre>{'nx dep-graph'}</pre>
       </details>
+      
       <details>
         <summary>Run affected commands</summary>
         <pre>{`# see what's been affected by changes

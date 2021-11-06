@@ -1,47 +1,45 @@
 {
-  "npmScope": "mel-services-logistiques",
-  "affected": {
-    "defaultBase": "main"
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/react-native"
-  },
-  "implicitDependencies": {
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
+    "npmScope": "mel-services-logistiques",
+    "affected": {
+        "defaultBase": "main"
     },
-    ".eslintrc.json": "*"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/nx-cloud",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"],
-        "accessToken": "ODY5NDM2NTQtNmZhNC00MzIxLTk2OTctMDVjNjAzZjdiODg4fHJlYWQtd3JpdGU="
-      }
-    }
-  },
-  "targetDependencies": {
-    "build": [
-      {
-        "target": "build",
-        "projects": "dependencies"
-      }
-    ]
-  },
-  "defaultProject": "",
-  "generators": {
-    "@nrwl/react": {
-      "application": {
-        "babel": true
-      }
+    "cli": {
+        "defaultCollection": "@nrwl/react-native"
     },
-    "@nrwl/next": {
-      "application": {
-        "style": "@emotion/styled",
-        "linter": "eslint"
-      }
+    "implicitDependencies": {
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        ".eslintrc.json": "*"
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/nx-cloud",
+            "options": {
+                "cacheableOperations": ["build", "lint", "test", "e2e"],
+                "accessToken": "ODY5NDM2NTQtNmZhNC00MzIxLTk2OTctMDVjNjAzZjdiODg4fHJlYWQtd3JpdGU="
+            }
+        }
+    },
+    "targetDependencies": {
+        "build": [{
+            "target": "build",
+            "projects": "dependencies"
+        }]
+    },
+    "defaultProject": "",
+    "generators": {
+        "@nrwl/react": {
+            "application": {
+                "babel": true
+            }
+        },
+        "@nrwl/next": {
+            "application": {
+                "style": "@emotion/styled",
+                "linter": "eslint"
+            }
+        }
     }
-  }
 }

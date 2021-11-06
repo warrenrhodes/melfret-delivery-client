@@ -24,12 +24,16 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "rules": {
+        "quotes": [1, "single", { "avoidEscape": true }]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {}
+      "rules": {
+        "quotes": [2, "single", { "avoidEscape": true }]
+      }
     }
   ]
 }

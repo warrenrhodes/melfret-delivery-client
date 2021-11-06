@@ -4,6 +4,7 @@
     "mobile": "apps/mobile",
     "mobile-e2e": "apps/mobile-e2e",
     "models": "libs/models",
+    "server": "apps/server",
     "shared-components": "libs/shared-components",
     "web-server": "apps/web-server",
     "web-server-e2e": "apps/web-server-e2e"
