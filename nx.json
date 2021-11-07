@@ -1,45 +1,47 @@
 {
-    "npmScope": "mel-services-logistiques",
-    "affected": {
-        "defaultBase": "main"
+  "npmScope": "mel-services-logistiques",
+  "affected": {
+    "defaultBase": "main"
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react-native"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
     },
-    "cli": {
-        "defaultCollection": "@nrwl/react-native"
-    },
-    "implicitDependencies": {
-        "package.json": {
-            "dependencies": "*",
-            "devDependencies": "*"
-        },
-        ".eslintrc.json": "*"
-    },
-    "tasksRunnerOptions": {
-        "default": {
-            "runner": "@nrwl/nx-cloud",
-            "options": {
-                "cacheableOperations": ["build", "lint", "test", "e2e"],
-                "accessToken": "ODY5NDM2NTQtNmZhNC00MzIxLTk2OTctMDVjNjAzZjdiODg4fHJlYWQtd3JpdGU="
-            }
-        }
-    },
-    "targetDependencies": {
-        "build": [{
-            "target": "build",
-            "projects": "dependencies"
-        }]
-    },
-    "defaultProject": "",
-    "generators": {
-        "@nrwl/react": {
-            "application": {
-                "babel": true
-            }
-        },
-        "@nrwl/next": {
-            "application": {
-                "style": "@emotion/styled",
-                "linter": "eslint"
-            }
-        }
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
+        "accessToken": "ODY5NDM2NTQtNmZhNC00MzIxLTk2OTctMDVjNjAzZjdiODg4fHJlYWQtd3JpdGU="
+      }
     }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "defaultProject": "",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "@emotion/styled",
+        "linter": "eslint"
+      }
+    }
+  }
 }
