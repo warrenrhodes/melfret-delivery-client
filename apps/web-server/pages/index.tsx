@@ -1,12 +1,16 @@
 import styled from '@emotion/styled';
-import {Welcome} from '@mel-services-logistiques/shared-components';
+import { Welcome } from '@mel-services-logistiques/shared-components';
 
 const StyledPage = styled.div`
   .page {
   }
 `;
 
-export function Index() {
+/**
+ * The main view of our application.
+ * @returns Our application main view.
+ */
+export function Index(): JSX.Element {
   /*
    * Replace the elements below with your own.
    *
@@ -85,7 +89,6 @@ nx g @nrwl/react:component xyz --project ui`}</pre>
         <summary>View dependency graph</summary>
         <pre>{'nx dep-graph'}</pre>
       </details>
-      
       <details>
         <summary>Run affected commands</summary>
         <pre>{`# see what's been affected by changes

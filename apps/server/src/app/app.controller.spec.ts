@@ -1,24 +1,24 @@
 import { Test, TestingModule } from '@nestjs/testing';
-
+import { AuthModule } from '../auth/auth.module';
 import { AppController } from './app.controller';
-import { AppService } from './app.service';
+
 
 describe('AppController', () => {
-  let app: TestingModule;
+  let appModule: TestingModule;
 
   beforeAll(async () => {
-    app = await Test.createTestingModule({
+    appModule = await Test.createTestingModule({
+      imports: [AuthModule],
       controllers: [AppController],
-      providers: [AppService],
     }).compile();
   });
 
   describe('getData', () => {
-    it('should return "Welcome to server!"', () => {
-      const appController = app.get<AppController>(AppController);
-      expect(appController.getData()).toEqual({
-        message: 'Welcome to server!',
-      });
+    it('should be defined', () => {
+      const appController = appModule.get<AppController>(AppController);
+      expect(appController).toBeDefined();
     });
+
+    // TODO: add a AppController.login test.
   });
 });

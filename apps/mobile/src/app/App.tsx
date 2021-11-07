@@ -1,26 +1,23 @@
+import { Welcome } from '@mel-services-logistiques/shared-components';
 import React from 'react';
 import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  Image,
-  View,
-  Text,
-  StatusBar,
-  TouchableOpacity,
+  Image, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View
 } from 'react-native';
-
+import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
 import {
   Colors,
   DebugInstructions,
-  ReloadInstructions,
+  ReloadInstructions
 } from 'react-native/Libraries/NewAppScreen';
-// @ts-ignore
-import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
 import Star from './star.svg';
-import { Welcome } from '@mel-services-logistiques/shared-components';
 
-const App = () => {
+
+
+/**
+ * The main component of our mobile application.
+ * @returns a jsx element.
+ */
+const App = (): JSX.Element => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
@@ -55,7 +52,9 @@ const App = () => {
               <Text style={styles.sectionTitle}>Learn More</Text>
               <TouchableOpacity
                 accessibilityRole="button"
-                onPress={() => openURLInBrowser('https://nx.dev')}
+                onPress={(): unknown => {
+                  return openURLInBrowser('https://nx.dev');
+                }}
                 testID="nx-link"
               >
                 <Text style={styles.sectionDescription}>
@@ -72,7 +71,7 @@ const App = () => {
               <View style={styles.githubStarContainer}>
                 <TouchableOpacity
                   style={styles.githubStarBadge}
-                  onPress={() => openURLInBrowser('https://github.com/nrwl/nx')}
+                  onPress={(): unknown => openURLInBrowser('https://github.com/nrwl/nx')}
                 >
                   <Star width={24} height={24} fill={Colors.dark} />
                   <Text> Star</Text>

@@ -1,11 +1,15 @@
-import { Module } from '@nestjs/common'
+import { Module } from '@nestjs/common';
+import { ViewController } from './view.controller';
+import { ViewService } from './view.service';
 
-import { ViewController } from './view.controller'
-import { ViewService } from './view.service'
 
 @Module({
   imports: [],
   providers: [ViewService],
   controllers: [ViewController]
 })
-export class ViewModule {}
+/**
+ * The module of the view.
+ * @with_decorator
+ */
+export class ViewModule { }

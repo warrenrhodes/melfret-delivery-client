@@ -18,7 +18,8 @@
       "@mel-services-logistiques/models": ["libs/models/src/index.ts"],
       "@mel-services-logistiques/shared-components": [
         "libs/shared-components/src/index.ts"
-      ]
+      ],
+      "@mel-services-logistiques/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,5 +1,5 @@
-import React from 'react';
 import styled from '@emotion/native';
+import React from 'react';
 import { Text, TouchableOpacity, View } from 'react-native';
 
 const Container = styled(View)`
@@ -17,10 +17,17 @@ const Title = styled(Text)`
   background-color: blue;
   color: palevioletred;
 `;
-/* eslint-disable-next-line */
-export interface WelcomeProps { }
 
-export function Welcome(props: WelcomeProps) {
+export interface WelcomeProps {
+  [key: string]: unknown;
+}
+
+/**
+ * The Welcome component.
+ * @param props The supported property for this Welcome element.
+ * @returns The Welcome component as jsx element.
+ */
+export function Welcome(props: WelcomeProps): JSX.Element {
   return (
     <TouchableOpacity>
       <Container>

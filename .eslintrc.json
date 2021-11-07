@@ -1,10 +1,23 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "rules": {
+    "@typescript-eslint/explicit-function-return-type": "off"
+  },
+  "ignorePatterns": [
+    "**/*"
+  ],
+  "plugins": [
+    "@nrwl/nx",
+    "sort-class-members"
+  ],
   "overrides": [
     {
-      "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+      "files": [
+        "*.ts",
+        "*.tsx",
+        "*.js",
+        "*.jsx"
+      ],
       "rules": {
         "@nrwl/nx/enforce-module-boundaries": [
           "error",
@@ -14,7 +27,9 @@
             "depConstraints": [
               {
                 "sourceTag": "*",
-                "onlyDependOnLibsWithTags": ["*"]
+                "onlyDependOnLibsWithTags": [
+                  "*"
+                ]
               }
             ]
           }
@@ -22,18 +37,159 @@
       }
     },
     {
-      "files": ["*.ts", "*.tsx"],
-      "extends": ["plugin:@nrwl/nx/typescript"],
+      "files": [
+        "*.ts",
+        "**.tsx"
+      ],
+      "extends": [
+        "plugin:@nrwl/nx/typescript"
+      ],
+      "parserOptions": {
+        "project": [
+          "libs/*/tsconfig.*?.json",
+          "apps/*/tsconfig.*?.json"
+        ]
+      },
       "rules": {
-        "quotes": [1, "single", { "avoidEscape": true }]
+        "quotes": [
+          "error",
+          "single",
+          {
+            "avoidEscape": true
+          }
+        ],
+        "spaced-comment": [
+          "error",
+          "always",
+          {
+            "exceptions": [
+              "-"
+            ],
+            "markers": [
+              "/"
+            ]
+          }
+        ],
+        "lines-around-comment": [
+          "error",
+          {
+            "beforeLineComment": true,
+            "ignorePattern": "@with_decorator",
+            "allowArrayStart": true,
+            "allowObjectStart": true,
+            "beforeBlockComment": true,
+            "allowBlockStart": true
+          }
+        ],
+        "require-jsdoc": [
+          "warn",
+          {
+            "require": {
+              "FunctionDeclaration": true,
+              "MethodDefinition": true,
+              "ClassDeclaration": true,
+              "ArrowFunctionExpression": true,
+              "FunctionExpression": true
+            }
+          }
+        ],
+        "no-inline-comments": "error",
+        "no-spaced-func": "error",
+        "valid-jsdoc": [
+          "warn",
+          {
+            "requireParamType": false,
+            "requireParamDescription": true,
+            "requireReturnType": false,
+            "requireReturnDescription": true,
+            "matchDescription": ".+",
+            "preferType": {
+              "Boolean": "boolean",
+              "Number": "number",
+              "object": "Object",
+              "String": "string"
+            },
+            "prefer": {
+              "arg": "param",
+              "argument": "param",
+              "class": "constructor",
+              "return": "returns",
+              "virtual": "abstract"
+            }
+          }
+        ],
+        "capitalized-comments": [
+          "error",
+          "always"
+        ],
+        "array-callback-return": [
+          "error",
+          {
+            "checkForEach": true
+          }
+        ],
+        "no-constructor-return": "error",
+        "no-unreachable": "error",
+        "consistent-return": [
+          "error",
+          {
+            "treatUndefinedAsUnspecified": true
+          }
+        ],
+        "no-else-return": [
+          "error",
+          {
+            "allowElseIf": false
+          }
+        ],
+        "no-return-await": "error",
+        "no-useless-return": "error",
+        "semi": [
+          "error",
+          "always",
+          {
+            "omitLastInOneLineBlock": true
+          }
+        ],
+        "semi-spacing": "error",
+        "block-spacing": "error",
+        "comma-spacing": "error",
+        "no-extra-semi": "error",
+        "sort-class-members/sort-class-members": [
+          2,
+          {
+            "order": [
+              "[static-properties]",
+              "[static-methods]",
+              "[properties]",
+              "[conventional-private-properties]",
+              "constructor",
+              "[methods]",
+              "[conventional-private-methods]"
+            ],
+            "accessorPairPositioning": "getThenSet"
+          }
+        ],
+        "@typescript-eslint/explicit-function-return-type": [
+          "error"
+        ],
+        "@typescript-eslint/no-base-to-string": [
+          "error"
+        ],
+        "@typescript-eslint/member-delimiter-style": [
+          "error"
+        ]
       }
     },
     {
-      "files": ["*.js", "*.jsx"],
-      "extends": ["plugin:@nrwl/nx/javascript"],
-      "rules": {
-        "quotes": [2, "single", { "avoidEscape": true }]
-      }
+      "files": [
+        "*.js",
+        "*.jsx"
+      ],
+      "extends": [
+        "plugin:@nrwl/nx/javascript"
+      ],
+      "rules": {}
     }
   ]
 }

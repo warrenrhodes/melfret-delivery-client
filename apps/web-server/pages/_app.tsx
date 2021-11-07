@@ -2,7 +2,11 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import './styles.css';
 
-function CustomApp({ Component, pageProps }: AppProps) {
+/**
+ * The main entry point of our web application.
+ * @returns The main app component.
+ */
+function CustomApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
     <>
       <Head>
