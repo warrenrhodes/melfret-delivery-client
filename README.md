@@ -33,17 +33,10 @@ Below are our core plugins:
 
 There are also many [community plugins](https://nx.dev/community) you could add.
 
-## Generate an application
-
-Run `nx g @nrwl/react:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
 
 ## Generate a library
 
-Run `nx g @nrwl/react:lib my-lib` to generate a library.
+Run `nx g @nrwl/workspace:library mylib` to generate a library.
 
 > You can also use any of the plugins above to generate libraries as well.
 
@@ -51,11 +44,12 @@ Libraries are shareable across libraries and applications. They can be imported 
 
 ## Development server
 
-Run `nx serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Run `nx serve server` to start a backend server.
+Run `nx serve web-server` to start a web server.
 
 ## Code scaffolding
 
-Run `nx g @nrwl/react:component my-component --project=my-app` to generate a new component.
+Run `nx g @nrwl/react-native:component MyComponent --project project-name` to generate a react component.
 
 ## Build
 
