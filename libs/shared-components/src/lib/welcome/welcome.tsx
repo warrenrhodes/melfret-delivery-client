@@ -27,7 +27,7 @@ export interface WelcomeProps {
  * @param props The supported property for this Welcome element.
  * @returns The Welcome component as jsx element.
  */
-export function Welcome(props: WelcomeProps): JSX.Element {
+export function Welcome(props: WelcomeProps): React.ReactElement {
   return (
     <TouchableOpacity>
       <Container>

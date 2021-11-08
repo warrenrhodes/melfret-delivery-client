@@ -1,5 +1,6 @@
 import styled from '@emotion/styled';
 import { Welcome } from '@mel-services-logistiques/shared-components';
+import React from 'react';
 
 const StyledPage = styled.div`
   .page {
@@ -10,7 +11,7 @@ const StyledPage = styled.div`
  * The main view of our application.
  * @returns Our application main view.
  */
-export function Index(): JSX.Element {
+export function Index(): React.ReactElement {
   /*
    * Replace the elements below with your own.
    *

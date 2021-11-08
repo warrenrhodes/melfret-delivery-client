@@ -1,4 +1,4 @@
-import { User } from '@mel-services-logistiques/models';
+import { Notification, User } from '@mel-services-logistiques/models';
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from '../auth/auth.module';
@@ -16,7 +16,8 @@ const imports = [
     password: 'admin_user',
     database: 'mel_delivery_service_db',
     entities: [
-      User
+      User,
+      Notification
     ],
     synchronize: true,
     retryAttempts: 10,

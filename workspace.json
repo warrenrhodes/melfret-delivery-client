@@ -6,6 +6,7 @@
     "server": "apps/server",
     "shared-components": "libs/shared-components",
     "utils": "libs/utils",
+    "view-utils": "libs/view-utils",
     "web-server": "apps/web-server"
   }
 }

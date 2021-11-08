@@ -10,30 +10,6 @@ This project was generated using [Nx](https://nx.dev).
 
 🔎 **Smart, Extensible Build Framework**
 
-## Adding capabilities to your workspace
-
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
-
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
-
-Below are our core plugins:
-
-- [React](https://reactjs.org)
-  - `npm install --save-dev @nrwl/react`
-- Web (no framework frontends)
-  - `npm install --save-dev @nrwl/web`
-- [Angular](https://angular.io)
-  - `npm install --save-dev @nrwl/angular`
-- [Nest](https://nestjs.com)
-  - `npm install --save-dev @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `npm install --save-dev @nrwl/express`
-- [Node](https://nodejs.org)
-  - `npm install --save-dev @nrwl/node`
-
-There are also many [community plugins](https://nx.dev/community) you could add.
-
-
 ## Generate a library
 
 Run `nx g @nrwl/workspace:library mylib` to generate a library.
@@ -50,6 +26,7 @@ Run `nx serve web-server` to start a web server.
 ## Code scaffolding
 
 Run `nx g @nrwl/react-native:component MyComponent --project project-name` to generate a react component.
+Run `nx g @nrwl/next:page my-page --project web-server` to generate a web page.
 
 ## Build
 
@@ -67,7 +44,7 @@ Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cy
 
 Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
 
-## Understand your workspace
+## Understand our workspace
 
 Run `nx dep-graph` to see a diagram of the dependencies of your projects.
 

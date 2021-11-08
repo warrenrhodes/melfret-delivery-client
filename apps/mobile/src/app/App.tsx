@@ -1,15 +1,10 @@
-import { Welcome } from '@mel-services-logistiques/shared-components';
+import { Notification } from '@mel-services-logistiques/models';
+import { NotificationComponent } from '@mel-services-logistiques/shared-components';
 import React from 'react';
+import { SafeAreaView, StatusBar, StyleSheet } from 'react-native';
 import {
-  Image, SafeAreaView, ScrollView, StatusBar, StyleSheet, Text, TouchableOpacity, View
-} from 'react-native';
-import openURLInBrowser from 'react-native/Libraries/Core/Devtools/openURLInBrowser';
-import {
-  Colors,
-  DebugInstructions,
-  ReloadInstructions
+  Colors
 } from 'react-native/Libraries/NewAppScreen';
-import Star from './star.svg';
 
 
 
@@ -17,69 +12,25 @@ import Star from './star.svg';
  * The main component of our mobile application.
  * @returns a jsx element.
  */
-const App = (): JSX.Element => {
+const App = (): React.ReactElement => {
+  const notifications: Notification[] = [
+    {
+      id: 0,
+      title: 'Declaration Recue',
+      description: 'Salut user2! \nVotre colis Pk-A45 est bien arrivee dans notre agence. \nVeuillez selectionnez un mode de livraison.',
+    },
+    {
+      id: 1,
+      title: 'Collis Recue',
+      description: 'Mr John Doe, votre colis a bien ete recue. Selectionner l\'action a effectuer',
+      action_json: '{"route": "mode_livraison"}'
+    },
+  ];
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
-        <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
-          style={styles.scrollView}
-        >
-          <View style={styles.header}>
-            <Image style={styles.logo} source={require('./logo.png')} />
-            <Text style={styles.heading} testID="heading">
-              Welcome to Mobile
-            </Text>
-          </View>
-          <View style={styles.body}>
-            <Welcome></Welcome>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
-              <Text style={styles.sectionDescription}>
-                <ReloadInstructions /> Alternatively, press{' '}
-                <Text style={styles.highlight}>R</Text> in the bundler terminal
-                window.
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <TouchableOpacity
-                accessibilityRole="button"
-                onPress={(): unknown => {
-                  return openURLInBrowser('https://nx.dev');
-                }}
-                testID="nx-link"
-              >
-                <Text style={styles.sectionDescription}>
-                  Visit <Text style={styles.link}>nx.dev</Text> for more info
-                  about Nx.
-                </Text>
-              </TouchableOpacity>
-
-              <Text style={styles.sectionDescription}>
-                Thank you for using and showing some ♥ for Nx. If you like Nx,
-                please give it a star:
-              </Text>
-
-              <View style={styles.githubStarContainer}>
-                <TouchableOpacity
-                  style={styles.githubStarBadge}
-                  onPress={(): unknown => openURLInBrowser('https://github.com/nrwl/nx')}
-                >
-                  <Star width={24} height={24} fill={Colors.dark} />
-                  <Text> Star</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
-          </View>
-        </ScrollView>
+        <NotificationComponent notifications={notifications}></NotificationComponent>
       </SafeAreaView>
     </>
   );
